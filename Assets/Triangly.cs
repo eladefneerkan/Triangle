@@ -15,6 +15,10 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] Animator animator;
 
     [SerializeField] int speed = 0;
+    [SerializeField] AudioSource SFXSource;
+    [SerializeField] AudioClip JumpClip;
+   
+ //[SerizlizeField] 
 
     private Rigidbody2D rb;
 
@@ -77,6 +81,7 @@ public class PlayerControl : MonoBehaviour
         if (isGrounded == true)
         {
             rb.AddForce(new Vector2(0, 500));
+            SFXSource.PlayOneShot(JumpClip);
         }
       //  Debug.Log(isGrounded);
     }
